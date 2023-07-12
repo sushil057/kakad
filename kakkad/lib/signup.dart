@@ -25,6 +25,14 @@ class Signup extends StatelessWidget {
                     width: double.infinity,
                     child: Image.asset('images/kakkadlogo.png'),
                   ),
+                  Text(
+                    'SIGN UP',
+                    style: TextStyle(
+                      fontSize: 35,
+                      fontWeight: FontWeight.bold,
+                      color: Mycolors.primaryred,
+                    ),
+                  ),
                   const SizedBox(height: 15),
                   const Textfield(
                     hinttext: 'Name',
@@ -60,7 +68,7 @@ class Signup extends StatelessWidget {
                       onpressed: () {
                         Navigator.of(context).push(
                           MaterialPageRoute(builder: (BuildContext context) {
-                            return const Verfication();
+                            return const Verification();
                           }),
                         );
                       },

@@ -5,7 +5,11 @@ class Textfield extends StatelessWidget {
   final String hinttext;
   final IconData? icon;
   final bool obscuretext;
+  final String? title;
+  final double? fontsize;
   const Textfield({
+    this.title,
+    this.fontsize,
     required this.hinttext,
     required this.icon,
     required this.obscuretext,
@@ -14,19 +18,35 @@ class Textfield extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      obscureText: obscuretext,
-      decoration: InputDecoration(
-        hintText: hinttext,
-        hintStyle: const TextStyle(
-          fontSize: 18,
+    return SizedBox(
+      height: 55,
+      child: TextField(
+        cursorColor: Mycolors.primaryblack,
+        obscureText: obscuretext,
+        decoration: InputDecoration(
+          focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Mycolors.primaryblack,
+                width: 1,
+              ),
+              borderRadius: BorderRadius.circular(10)),
+          labelText: title,
+          hintText: hinttext,
+          hintStyle: TextStyle(
+            fontSize: fontsize,
+          ),
+          prefixIcon: Icon(
+            icon,
+            color: Mycolors.primaryred,
+          ),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide(
+              width: 1,
+              color: Colors.grey.shade100,
+            ),
+          ),
         ),
-        prefixIcon: Icon(
-          icon,
-          color: Mycolors.primaryred,
-        ),
-        border: OutlineInputBorder(
-            borderSide: BorderSide(width: 1, color: Colors.grey.shade100)),
       ),
     );
   }

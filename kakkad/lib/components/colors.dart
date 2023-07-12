@@ -5,4 +5,5 @@ class Mycolors {
   static var primaryblack = const Color.fromRGBO(32, 32, 32, 1);
   static var primaryyellow = const Color.fromRGBO(255, 221, 68, 1);
   static var primarygreytext = const Color.fromRGBO(107, 113, 108, 1);
+  static var primarytext = const Color.fromRGBO(50, 50, 50, 1);
 }
