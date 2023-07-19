@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:kakkad/components/appbar.dart';
 import 'package:kakkad/components/button.dart';
 import 'package:kakkad/components/colors.dart';
 import 'package:kakkad/components/inputtext.dart';
-import 'package:kakkad/components/title.dart';
 import 'package:kakkad/verification.dart';
 
 class Signup extends StatelessWidget {
@@ -13,13 +13,15 @@ class Signup extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        appBar: const PreferredSize(
+            preferredSize: Size.fromHeight(kToolbarHeight),
+            child: Myappbar(title: 'SIGN UP')),
         body: SingleChildScrollView(
           child: SafeArea(
             child: Container(
               margin: const EdgeInsets.only(left: 30, right: 30, top: 80),
               child: Column(
                 children: [
-                  const Titletext(title: 'LOGIN'),
                   SizedBox(
                     height: 100,
                     width: double.infinity,

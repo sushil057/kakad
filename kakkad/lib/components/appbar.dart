@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:kakkad/components/colors.dart';
 
 class Myappbar extends StatelessWidget implements PreferredSizeWidget {
-  const Myappbar({super.key});
+  final String title;
+  const Myappbar({
+    required this.title,
+    super.key,
+  });
   @override
   Size get preferredSize => const Size.fromHeight(kTextTabBarHeight);
 
@@ -11,10 +15,25 @@ class Myappbar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       backgroundColor: Colors.transparent,
       shadowColor: Colors.transparent,
-      title: Text(
-        'LOGIN',
-        style: TextStyle(
+      leading: IconButton(
+        onPressed: () {},
+        icon: Icon(
+          Icons.arrow_back,
           color: Mycolors.primarygreytext,
+        ),
+      ),
+      bottom: PreferredSize(
+        preferredSize: const Size.fromHeight(1),
+        child: Divider(
+          height: 1,
+          color: Mycolors.primarygreytext,
+        ),
+      ),
+      title: Text(
+        title,
+        style: TextStyle(
+          color: Mycolors.primarytext,
+          fontWeight: FontWeight.bold,
         ),
       ),
       centerTitle: true,

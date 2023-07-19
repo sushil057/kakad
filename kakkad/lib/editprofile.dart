@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kakkad/components/appbar.dart';
 import 'package:kakkad/components/button.dart';
 import 'package:kakkad/components/inputtext.dart';
 
@@ -10,10 +11,14 @@ class Editprofile extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        appBar: const PreferredSize(
+          preferredSize: Size.fromHeight(kToolbarHeight),
+          child: Myappbar(title: 'PROFILE'),
+        ),
         body: SingleChildScrollView(
           child: SafeArea(
             child: Container(
-              margin: const EdgeInsets.only(left: 30, right: 30, top: 50),
+              margin: const EdgeInsets.only(left: 30, right: 30, top: 30),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,

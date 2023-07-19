@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kakkad/components/appbar.dart';
 import 'package:kakkad/components/button.dart';
 import 'package:kakkad/editprofile.dart';
 import 'package:kakkad/login.dart';
@@ -11,24 +12,15 @@ class Profile extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          //   title: const Text(
-          //     'My Profile',
-          //     textAlign: TextAlign.center,
-          //     style: TextStyle(
-          //       color: Colors.black,
-          //     ),
-          //   ),
-          //   centerTitle: true,
-          backgroundColor: Colors.transparent,
-          shadowColor: Colors.transparent,
+        appBar: const PreferredSize(
+          preferredSize: Size.fromHeight(kToolbarHeight),
+          child: Myappbar(title: 'PROFILE'),
         ),
         body: SingleChildScrollView(
           child: SafeArea(
             child: Container(
-              margin: const EdgeInsets.only(left: 30, right: 30, top: 40),
+              margin: const EdgeInsets.only(left: 20, right: 20),
               child: Column(
-                // crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
@@ -50,7 +42,6 @@ class Profile extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 15),
                   Container(
                     width: 120,
                     height: 120,

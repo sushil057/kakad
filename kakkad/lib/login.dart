@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:kakkad/components/appbar.dart';
 import 'package:kakkad/components/button.dart';
 import 'package:kakkad/components/colors.dart';
 import 'package:kakkad/components/inputtext.dart';
-import 'package:kakkad/components/title.dart';
+import 'package:kakkad/forgetpassword.dart';
 import 'package:kakkad/profile.dart';
 import 'package:kakkad/signup.dart';
 
@@ -14,7 +15,9 @@ class Loginpage extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        // appBar: const Myappbar(),
+        appBar: const PreferredSize(
+            preferredSize: Size.fromHeight(kToolbarHeight),
+            child: Myappbar(title: 'LOGIN')),
         body: SingleChildScrollView(
           child: SafeArea(
             child: Container(
@@ -22,7 +25,6 @@ class Loginpage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  const Titletext(title: 'LOGIN'),
                   SizedBox(
                     height: 100,
                     width: double.infinity,
@@ -55,7 +57,13 @@ class Loginpage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(builder: (BuildContext context) {
+                              return const Forgetpassword();
+                            }),
+                          );
+                        },
                         child: Text(
                           'Forget Password',
                           style: TextStyle(
