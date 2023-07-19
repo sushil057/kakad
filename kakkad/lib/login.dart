@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:kakkad/components/appbar.dart';
 import 'package:kakkad/components/button.dart';
 import 'package:kakkad/components/colors.dart';
 import 'package:kakkad/components/inputtext.dart';
@@ -15,9 +14,25 @@ class Loginpage extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: const PreferredSize(
-            preferredSize: Size.fromHeight(kToolbarHeight),
-            child: Myappbar(title: 'LOGIN')),
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          shadowColor: Colors.transparent,
+          bottom: PreferredSize(
+            preferredSize: const Size.fromHeight(1),
+            child: Divider(
+              height: 1,
+              color: Mycolors.primarygreytext,
+            ),
+          ),
+          title: Text(
+            'LOGIN',
+            style: TextStyle(
+              color: Mycolors.primarytext,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          centerTitle: true,
+        ),
         body: SingleChildScrollView(
           child: SafeArea(
             child: Container(
