@@ -18,12 +18,11 @@ class Editprofile extends StatelessWidget {
         body: SingleChildScrollView(
           child: SafeArea(
             child: Container(
-              margin: const EdgeInsets.only(left: 30, right: 30, top: 30),
+              margin: const EdgeInsets.only(left: 20, right: 20, top: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  const SizedBox(height: 20),
                   const Titletext(title: '   Name*'),
                   const Textfield(
                     hinttext: 'Hari Bahadur',

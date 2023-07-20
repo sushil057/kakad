@@ -20,8 +20,7 @@ class Confirmpassword extends StatelessWidget {
         body: SingleChildScrollView(
           child: SafeArea(
             child: Container(
-              margin: const EdgeInsets.only(
-                  left: 30, right: 30, top: 30, bottom: 30),
+              margin: const EdgeInsets.only(left: 20, right: 20, top: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
