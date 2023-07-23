@@ -17,44 +17,46 @@ class Shippingaddress extends StatelessWidget {
           preferredSize: Size.fromHeight(kToolbarHeight),
           child: Myappbar(title: 'SHIPPING ADDRESS'),
         ),
-        body: SafeArea(
-          child: Container(
-            margin: const EdgeInsets.only(left: 20, right: 20, top: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Titletext(title: '  City'),
-                const Textfield(
-                  hinttext: 'city',
-                  icon: Icons.location_city,
-                  obscuretext: false,
-                ),
-                const SizedBox(height: 20),
-                const Titletext(title: '  Phone*'),
-                const Textfield(
-                  hinttext: '+977-9812345678',
-                  icon: Icons.phone_outlined,
-                  obscuretext: false,
-                ),
-                const SizedBox(height: 20),
-                const Titletext(title: '  Address*'),
-                const Textfield(
-                  hinttext: 'Srijanachowk-8, Pokhara',
-                  icon: Icons.location_on_outlined,
-                  obscuretext: false,
-                ),
-                const SizedBox(height: 400),
-                Custombutton(
-                  onpressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(builder: (BuildContext context) {
-                        return const Profile();
-                      }),
-                    );
-                  },
-                  label: 'UPDATE SHIPPING ADDRESS',
-                ),
-              ],
+        body: SingleChildScrollView(
+          child: SafeArea(
+            child: Container(
+              margin: const EdgeInsets.only(left: 20, right: 20, top: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Titletext(title: '  City'),
+                  const Textfield(
+                    hinttext: 'city',
+                    icon: Icons.location_city,
+                    obscuretext: false,
+                  ),
+                  const SizedBox(height: 20),
+                  const Titletext(title: '  Phone*'),
+                  const Textfield(
+                    hinttext: '+977-9812345678',
+                    icon: Icons.phone_outlined,
+                    obscuretext: false,
+                  ),
+                  const SizedBox(height: 20),
+                  const Titletext(title: '  Address*'),
+                  const Textfield(
+                    hinttext: 'Srijanachowk-8, Pokhara',
+                    icon: Icons.location_on_outlined,
+                    obscuretext: false,
+                  ),
+                  const SizedBox(height: 400),
+                  Custombutton(
+                    onpressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (BuildContext context) {
+                          return const Profile();
+                        }),
+                      );
+                    },
+                    label: 'UPDATE SHIPPING ADDRESS',
+                  ),
+                ],
+              ),
             ),
           ),
         ),

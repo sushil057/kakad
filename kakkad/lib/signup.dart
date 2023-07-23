@@ -19,7 +19,7 @@ class Signup extends StatelessWidget {
         body: SingleChildScrollView(
           child: SafeArea(
             child: Container(
-              margin: const EdgeInsets.only(left: 20, right: 20, top: 87),
+              margin: const EdgeInsets.only(left: 20, right: 20, top: 70),
               child: Column(
                 children: [
                   SizedBox(

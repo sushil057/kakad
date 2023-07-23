@@ -3,6 +3,7 @@ import 'package:kakkad/changepwd.dart';
 import 'package:kakkad/components/appbar.dart';
 import 'package:kakkad/components/button.dart';
 import 'package:kakkad/components/colors.dart';
+import 'package:kakkad/components/rowcontents.dart';
 import 'package:kakkad/editprofile.dart';
 import 'package:kakkad/login.dart';
 import 'package:kakkad/shippingaddress.dart';
@@ -113,7 +114,7 @@ class Profile extends StatelessWidget {
                   const SizedBox(height: 5),
                   RowContent(
                     icon: Icons.alarm_rounded,
-                    label: 'Purchas History',
+                    label: 'Purchase History',
                     icon2: Icons.arrow_forward_ios,
                     onpressed: () {},
                   ),
@@ -141,7 +142,7 @@ class Profile extends StatelessWidget {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (BuildContext context) {
-                            return const CHangepswd();
+                            return const Changepswd();
                           },
                         ),
                       );
@@ -160,53 +161,6 @@ class Profile extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class RowContent extends StatelessWidget {
-  final IconData icon;
-  final String label;
-  final IconData? icon2;
-  final VoidCallback onpressed;
-
-  const RowContent({
-    required this.icon,
-    required this.label,
-    required this.onpressed,
-    this.icon2,
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        TextButton(
-          onPressed: onpressed,
-          child: Row(
-              // mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Icon(
-                  icon,
-                  color: Mycolors.primaryred,
-                ),
-                const SizedBox(width: 15),
-                Text(
-                  label,
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Mycolors.primaryblack,
-                  ),
-                ),
-                Icon(
-                  icon2,
-                  color: Mycolors.primarytext,
-                  size: 16,
-                ),
-              ]),
-        ),
-      ],
     );
   }
 }

@@ -22,12 +22,13 @@ class Pwdverification extends StatelessWidget {
               margin: const EdgeInsets.only(
                   left: 20, right: 20, top: 20, bottom: 20),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   const SizedBox(height: 100),
                   const Text(
                     'Enter the verification code sent to you at: s***********1@example.com',
+                    style: TextStyle(fontSize: 18),
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 30),
@@ -54,19 +55,20 @@ class Pwdverification extends StatelessWidget {
                     ),
                     child: RichText(
                       text: const TextSpan(
-                          text: "                Didn't receive OTP?",
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                          children: <TextSpan>[
-                            TextSpan(
-                              text: "  Resend OTP",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.blue,
-                              ),
+                        text: "Didn't receive OTP?",
+                        style: TextStyle(
+                          color: Colors.black,
+                        ),
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: "  Resend OTP",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.blue,
                             ),
-                          ]),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   const SizedBox(height: 300),

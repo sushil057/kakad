@@ -5,8 +5,8 @@ import 'package:kakkad/components/inputtext.dart';
 import 'package:kakkad/components/title.dart';
 import 'package:kakkad/profile.dart';
 
-class CHangepswd extends StatelessWidget {
-  const CHangepswd({super.key});
+class Changepswd extends StatelessWidget {
+  const Changepswd({super.key});
 
   @override
   Widget build(BuildContext context) {

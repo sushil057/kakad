@@ -3,6 +3,7 @@ import 'package:kakkad/components/button.dart';
 import 'package:kakkad/components/colors.dart';
 import 'package:kakkad/components/inputtext.dart';
 import 'package:kakkad/forgetpassword.dart';
+import 'package:kakkad/menu.dart';
 import 'package:kakkad/profile.dart';
 import 'package:kakkad/signup.dart';
 
@@ -36,7 +37,7 @@ class Loginpage extends StatelessWidget {
         body: SingleChildScrollView(
           child: SafeArea(
             child: Container(
-              margin: const EdgeInsets.only(left: 20, right: 32, top: 70),
+              margin: const EdgeInsets.only(left: 20, right: 20, top: 70),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -44,6 +45,14 @@ class Loginpage extends StatelessWidget {
                     height: 100,
                     width: double.infinity,
                     child: Image.asset('images/kakkadlogo.png'),
+                  ),
+                  Text(
+                    'LOG IN',
+                    style: TextStyle(
+                      fontSize: 35,
+                      fontWeight: FontWeight.bold,
+                      color: Mycolors.primaryred,
+                    ),
                   ),
                   const SizedBox(height: 15),
                   const Textfield(
@@ -137,7 +146,13 @@ class Loginpage extends StatelessWidget {
                         backgroundColor: Colors.transparent,
                         shadowColor: Colors.transparent,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (BuildContext context) => const Menu(),
+                          ),
+                        );
+                      },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -160,6 +175,7 @@ class Loginpage extends StatelessWidget {
                       ),
                     ),
                   ),
+                  // const MyNavbar(),
                 ],
               ),
             ),
