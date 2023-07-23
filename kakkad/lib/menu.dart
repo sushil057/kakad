@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:kakkad/aboutpage.dart';
 import 'package:kakkad/components/appbar.dart';
 import 'package:kakkad/components/rowcontents.dart';
+import 'package:kakkad/feedback.dart';
 
 class Menu extends StatelessWidget {
   const Menu({super.key});
@@ -23,13 +25,25 @@ class Menu extends StatelessWidget {
                   RowContent(
                     icon: Icons.info_outline,
                     label: 'About Kakad',
-                    onpressed: () {},
+                    onpressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (BuildContext context) {
+                          return const Aboutkakad();
+                        }),
+                      );
+                    },
                   ),
                   const SizedBox(height: 10),
                   RowContent(
                     icon: Icons.feedback_outlined,
                     label: 'Feedback',
-                    onpressed: () {},
+                    onpressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (BuildContext context) {
+                          return const Feedbackfield();
+                        }),
+                      );
+                    },
                   ),
                   const SizedBox(height: 10),
                   RowContent(

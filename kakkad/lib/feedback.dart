@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:kakkad/components/appbar.dart';
-import 'package:kakkad/components/inputtext.dart';
+import 'package:kakkad/components/button.dart';
+import 'package:kakkad/components/colors.dart';
 import 'package:kakkad/components/title.dart';
 
-class Feedback extends StatelessWidget {
-  const Feedback({super.key});
+class Feedbackfield extends StatelessWidget {
+  const Feedbackfield({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,17 +15,65 @@ class Feedback extends StatelessWidget {
           preferredSize: Size.fromHeight(kToolbarHeight),
           child: Myappbar(title: 'FEEDBACK PAGE'),
         ),
-        body: SingleChildScrollView(
+        body: Center(
           child: SafeArea(
             child: Container(
               margin: const EdgeInsets.only(left: 20, right: 20, top: 20),
-              child: const Column(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 15),
-                  Titletext(title: 'Title'),
-                  Textfield(hinttext: '', icon: null, obscuretext: false),
-                  Titletext(title: 'Review'),
-                  Textfield(hinttext: '', icon: null, obscuretext: false),
+                  const SizedBox(height: 15),
+                  const Titletext(title: ' Title'),
+                  TextFormField(
+                    cursorColor: Mycolors.primaryblack,
+                    decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Mycolors.primaryblack,
+                        ),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Mycolors.primaryblack,
+                            width: 1,
+                          ),
+                          borderRadius: BorderRadius.circular(10)),
+                    ),
+                    maxLines: 1,
+                  ),
+                  const SizedBox(height: 15),
+                  const Titletext(title: ' Review'),
+                  TextFormField(
+                    cursorColor: Mycolors.primaryblack,
+                    decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Mycolors.primaryblack,
+                        ),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Mycolors.primaryblack,
+                            width: 1,
+                          ),
+                          borderRadius: BorderRadius.circular(10)),
+                    ),
+                    maxLines: 8,
+                  ),
+                  Expanded(
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Padding(
+                        padding: const EdgeInsets.all(16),
+                        child: Custombutton(
+                          onpressed: () {},
+                          label: 'SUBMIT',
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),

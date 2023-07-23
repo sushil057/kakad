@@ -110,7 +110,6 @@ class _VerificationState extends State<Verification> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 50),
                   Custombutton(
                     label: 'SIGN UP',
                     onpressed: () {
