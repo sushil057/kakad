@@ -17,10 +17,11 @@ class Changepswd extends StatelessWidget {
           preferredSize: Size.fromHeight((kToolbarHeight)),
           child: Myappbar(title: 'CHANGE PASSWORD'),
         ),
-        body: SingleChildScrollView(
+        body: Center(
           child: SafeArea(
             child: Container(
-              margin: const EdgeInsets.only(left: 20, right: 20, top: 30),
+              margin: const EdgeInsets.only(
+                  left: 20, right: 20, top: 30, bottom: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -47,16 +48,20 @@ class Changepswd extends StatelessWidget {
                     icon: Icons.lock,
                     obscuretext: true,
                   ),
-                  const SizedBox(height: 400),
-                  Custombutton(
-                    onpressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(builder: (BuildContext context) {
-                          return const Profile();
-                        }),
-                      );
-                    },
-                    label: 'UPDATE PASSWORD',
+                  Expanded(
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Custombutton(
+                        onpressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(builder: (BuildContext context) {
+                              return const Profile();
+                            }),
+                          );
+                        },
+                        label: 'UPDATE PASSWORD',
+                      ),
+                    ),
                   ),
                 ],
               ),

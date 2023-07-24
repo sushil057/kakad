@@ -17,10 +17,11 @@ class Shippingaddress extends StatelessWidget {
           preferredSize: Size.fromHeight(kToolbarHeight),
           child: Myappbar(title: 'SHIPPING ADDRESS'),
         ),
-        body: SingleChildScrollView(
+        body: Center(
           child: SafeArea(
             child: Container(
-              margin: const EdgeInsets.only(left: 20, right: 20, top: 20),
+              margin: const EdgeInsets.only(
+                  left: 20, right: 20, top: 20, bottom: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -44,17 +45,32 @@ class Shippingaddress extends StatelessWidget {
                     icon: Icons.location_on_outlined,
                     obscuretext: false,
                   ),
-                  const SizedBox(height: 400),
-                  Custombutton(
-                    onpressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(builder: (BuildContext context) {
-                          return const Profile();
-                        }),
-                      );
-                    },
-                    label: 'UPDATE SHIPPING ADDRESS',
+                  Expanded(
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Custombutton(
+                        onpressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(builder: (BuildContext context) {
+                              return const Profile();
+                            }),
+                          );
+                        },
+                        label: 'SUBMIT',
+                      ),
+                    ),
                   ),
+
+                  // Custombutton(
+                  //   onpressed: () {
+                  //     Navigator.of(context).push(
+                  //       MaterialPageRoute(builder: (BuildContext context) {
+                  //         return const Profile();
+                  //       }),
+                  //     );
+                  //   },
+                  //   label: 'UPDATE SHIPPING ADDRESS',
+                  // ),
                 ],
               ),
             ),

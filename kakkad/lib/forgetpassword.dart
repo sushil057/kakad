@@ -17,11 +17,11 @@ class Forgetpassword extends StatelessWidget {
           preferredSize: Size.fromHeight(kToolbarHeight),
           child: Myappbar(title: 'FORGET PASSWORD'),
         ),
-        body: SingleChildScrollView(
+        body: Center(
           child: SafeArea(
             child: Container(
               margin: const EdgeInsets.only(
-                  left: 30, right: 20, top: 20, bottom: 70),
+                  left: 30, right: 20, top: 20, bottom: 50),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -31,16 +31,21 @@ class Forgetpassword extends StatelessWidget {
                       hinttext: 'hari@example.com',
                       icon: Icons.mail,
                       obscuretext: false),
-                  const SizedBox(height: 600),
-                  Custombutton(
-                      onpressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(builder: (BuildContext context) {
-                            return const Pwdverification();
-                          }),
-                        );
-                      },
-                      label: 'CONTINUE'),
+                  Expanded(
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Custombutton(
+                          onpressed: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) {
+                                return const Pwdverification();
+                              }),
+                            );
+                          },
+                          label: 'CONTINUE'),
+                    ),
+                  ),
                 ],
               ),
             ),

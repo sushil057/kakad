@@ -17,10 +17,11 @@ class Confirmpassword extends StatelessWidget {
           preferredSize: Size.fromHeight(kToolbarHeight),
           child: Myappbar(title: 'FORGET PASSWORD'),
         ),
-        body: SingleChildScrollView(
+        body: Center(
           child: SafeArea(
             child: Container(
-              margin: const EdgeInsets.only(left: 20, right: 20, top: 20),
+              margin: const EdgeInsets.only(
+                  left: 20, right: 20, top: 20, bottom: 50),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -37,15 +38,21 @@ class Confirmpassword extends StatelessWidget {
                       icon: Icons.lock,
                       obscuretext: true),
                   const SizedBox(height: 450),
-                  Custombutton(
-                      onpressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(builder: (BuildContext context) {
-                            return const Loginpage();
-                          }),
-                        );
-                      },
-                      label: 'CONTINUE'),
+                  Expanded(
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Custombutton(
+                          onpressed: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) {
+                                return const Loginpage();
+                              }),
+                            );
+                          },
+                          label: 'CONTINUE'),
+                    ),
+                  ),
                 ],
               ),
             ),

@@ -18,7 +18,8 @@ class Feedbackfield extends StatelessWidget {
         body: Center(
           child: SafeArea(
             child: Container(
-              margin: const EdgeInsets.only(left: 20, right: 20, top: 20),
+              margin: const EdgeInsets.only(
+                  left: 20, right: 20, top: 20, bottom: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -65,12 +66,9 @@ class Feedbackfield extends StatelessWidget {
                   Expanded(
                     child: Align(
                       alignment: Alignment.bottomCenter,
-                      child: Padding(
-                        padding: const EdgeInsets.all(16),
-                        child: Custombutton(
-                          onpressed: () {},
-                          label: 'SUBMIT',
-                        ),
+                      child: Custombutton(
+                        onpressed: () {},
+                        label: 'SUBMIT',
                       ),
                     ),
                   ),
