@@ -3,8 +3,10 @@ import 'package:kakkad/components/colors.dart';
 
 class Myappbar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
+  final void Function()? onpressed;
   const Myappbar({
     required this.title,
+    this.onpressed,
     super.key,
   });
   @override
@@ -16,9 +18,7 @@ class Myappbar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Colors.transparent,
       shadowColor: Colors.transparent,
       leading: IconButton(
-        onPressed: () {
-          // Navigator.pop(context);
-        },
+        onPressed: onpressed,
         icon: Icon(
           Icons.arrow_back,
           color: Mycolors.primarygreytext,

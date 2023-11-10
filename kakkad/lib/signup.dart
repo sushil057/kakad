@@ -13,9 +13,15 @@ class Signup extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: const PreferredSize(
-            preferredSize: Size.fromHeight(kToolbarHeight),
-            child: Myappbar(title: 'SIGN UP')),
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(kToolbarHeight),
+          child: Myappbar(
+            title: 'SIGN UP',
+            onpressed: () {
+              Navigator.of(context).pop(context);
+            },
+          ),
+        ),
         body: SingleChildScrollView(
           child: SafeArea(
             child: Container(

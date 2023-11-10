@@ -11,7 +11,6 @@ class Changepswd extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: const PreferredSize(
           preferredSize: Size.fromHeight((kToolbarHeight)),

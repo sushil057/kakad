@@ -20,9 +20,14 @@ class _VerificationState extends State<Verification> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: const PreferredSize(
-          preferredSize: Size.fromHeight(kToolbarHeight),
-          child: Myappbar(title: 'SIGN UP'),
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(kToolbarHeight),
+          child: Myappbar(
+            title: 'SIGN UP',
+            onpressed: () {
+              Navigator.of(context).pop(context);
+            },
+          ),
         ),
         body: SingleChildScrollView(
           child: SafeArea(
@@ -72,19 +77,20 @@ class _VerificationState extends State<Verification> {
                     ),
                     child: RichText(
                       text: const TextSpan(
-                          text: "     Didn't receive OTP?",
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                          children: <TextSpan>[
-                            TextSpan(
-                              text: "  Resend OTP",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.blue,
-                              ),
+                        text: "     Didn't receive OTP?",
+                        style: TextStyle(
+                          color: Colors.black,
+                        ),
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: "  Resend OTP",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.blue,
                             ),
-                          ]),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   const SizedBox(height: 30),

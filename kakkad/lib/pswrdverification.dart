@@ -12,41 +12,46 @@ class Pwdverification extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: const PreferredSize(
-          preferredSize: Size.fromHeight(kToolbarHeight),
-          child: Myappbar(title: 'FORGET PASSWORD'),
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(kToolbarHeight),
+          child: Myappbar(
+            title: 'FORGET PASSWORD',
+            onpressed: () {
+              Navigator.of(context).pop(context);
+            },
+          ),
         ),
         body: Center(
-          child: SafeArea(
-            child: Container(
-              margin: const EdgeInsets.only(
-                  left: 20, right: 20, top: 20, bottom: 50),
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    const SizedBox(height: 100),
-                    const Text(
-                      'Enter the verification code sent to you at: s***********1@example.com',
-                      style: TextStyle(fontSize: 18),
-                      textAlign: TextAlign.center,
+          child: Container(
+            margin:
+                const EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 50),
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  const SizedBox(height: 100),
+                  const Text(
+                    'Enter the verification code sent to you at: g***********1@example.com',
+                    style: TextStyle(fontSize: 18),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 30),
+                  const SizedBox(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Codebox(),
+                        Codebox(),
+                        Codebox(),
+                        Codebox(),
+                        Codebox(),
+                        Codebox(),
+                      ],
                     ),
-                    const SizedBox(height: 30),
-                    const SizedBox(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Codebox(),
-                          Codebox(),
-                          Codebox(),
-                          Codebox(),
-                          Codebox(),
-                          Codebox(),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                    ElevatedButton(
+                  ),
+                  const SizedBox(height: 20),
+                  Expanded(
+                    child: ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.transparent,
@@ -71,24 +76,23 @@ class Pwdverification extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 300),
-                    Expanded(
-                      child: Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Custombutton(
-                            onpressed: () {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                    builder: (BuildContext context) {
-                                  return const Confirmpassword();
-                                }),
-                              );
-                            },
-                            label: 'CONTINUE'),
-                      ),
+                  ),
+                  Expanded(
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Custombutton(
+                          onpressed: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) {
+                                return const Confirmpassword();
+                              }),
+                            );
+                          },
+                          label: 'CONTINUE'),
                     ),
-                  ]),
-            ),
+                  ),
+                ]),
           ),
         ),
       ),

@@ -9,7 +9,7 @@ class Codebox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 43,
-      height: 49,
+      height: 45,
       decoration: BoxDecoration(
         color: Colors.grey.shade200,
         border: Border.all(color: Colors.transparent),

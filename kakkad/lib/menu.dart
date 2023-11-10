@@ -12,9 +12,14 @@ class Menu extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: const PreferredSize(
-          preferredSize: Size.fromHeight(kToolbarHeight),
-          child: Myappbar(title: 'MENU'),
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(kToolbarHeight),
+          child: Myappbar(
+            title: 'MENU',
+            onpressed: () {
+              Navigator.of(context).pop(context);
+            },
+          ),
         ),
         body: SingleChildScrollView(
           child: SafeArea(

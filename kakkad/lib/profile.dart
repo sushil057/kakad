@@ -16,9 +16,14 @@ class Profile extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: const PreferredSize(
-          preferredSize: Size.fromHeight(kToolbarHeight),
-          child: Myappbar(title: 'MY PROFILE'),
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(kToolbarHeight),
+          child: Myappbar(
+            title: 'MY PROFILE',
+            onpressed: () {
+              Navigator.of(context).pop(context);
+            },
+          ),
         ),
         body: SingleChildScrollView(
           child: SafeArea(
@@ -60,7 +65,7 @@ class Profile extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
                   const Text(
-                    'Hari Bahadur',
+                    'Hari Ghimire',
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -72,7 +77,7 @@ class Profile extends StatelessWidget {
                     children: [
                       Icon(Icons.mail_outline),
                       SizedBox(width: 5),
-                      Text('abc@example.com')
+                      Text('ghimirehari21@gmail.com')
                     ],
                   ),
                   const SizedBox(height: 10),
@@ -81,7 +86,7 @@ class Profile extends StatelessWidget {
                     children: [
                       Icon(Icons.local_phone_outlined),
                       SizedBox(width: 5),
-                      Text('977-9812345678'),
+                      Text('977-9856084928'),
                     ],
                   ),
                   const SizedBox(height: 10),
